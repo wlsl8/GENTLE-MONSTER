@@ -1,0 +1,1091 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GentleMonster</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="css/main.css">
+    <script src="lib/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        $(function () {
+            let depth1 = $('.header .gnb > li')
+            let depth2 = $('.header .depth-02')
+            let navBg = $('.header .bg');
+
+            depth1.on('mouseenter', function () {
+                $(this).find(depth2).slideDown();
+                navBg.stop().slideDown();
+            });
+            depth1.on('mouseleave', function () {
+                $(this).find(depth2).stop().slideUp();
+                navBg.stop().slideUp();
+            });
+        });//script end
+
+
+        window.onload = () => {
+            let tabBtns = document.querySelectorAll('.tab_btn');
+
+            tabBtns.forEach(tab => {
+                const btnOff = tab.querySelector('.off');
+                const btnOn = tab.querySelector('.on');
+
+                // 기본 상태: off 버튼이 보이게
+                btnOff.classList.add('active');
+                btnOn.classList.remove('active');
+
+                // 클릭 이벤트: off 클릭하면 on으로, on 클릭하면 off로
+                btnOff.addEventListener('click', () => {
+                    btnOff.classList.remove('active');
+                    btnOn.classList.add('active');
+                });
+
+                btnOn.addEventListener('click', () => {
+                    btnOn.classList.remove('active');
+                    btnOff.classList.add('active');
+                });
+            });
+
+            var swiper = new Swiper(".swiper.main", {
+                autoplay: {
+                    delay: 4000,
+                    disableOnInteraction: false,
+                },
+                speed: 1000,
+                pagination: {
+                    el: ".main-pagination",
+                    clickable: true,
+                },
+                loop: true,
+            });
+
+            var swiper = new Swiper(".swiper.newproduct", {
+                autoplay: {
+                    delay: 6000,
+                    disableOnInteraction: false,
+                },
+                speed: 1000,
+                pagination: {
+                    el: ".newproduct-pagination",
+                    clickable: true,
+                },
+                loop: true,
+            });
+
+            var swiper = new Swiper(".swiper.best", {
+                slidesPerView: 4.5,
+                spaceBetween: 30,
+                pagination: {
+                    el: ".best-pagination",
+                    clickable: true,
+                },
+            });
+        };// end
+    </script>
+
+</head>
+
+<body>
+    <div id="wrap">
+        <header class="header">
+            <div class="inner">
+                <h1 class="logo">
+                    <img src="img/logo.png" alt="로고이미지">
+                </h1><!-- logo -->
+                <div class="nav">
+                    <ul class="gnb">
+                        <li>
+                            <a href="#" class="depth-01">Shop</a>
+                            <ul class="depth-02">
+                                <li><a href="#">신상품</a></li>
+                                <li><a href="#">컬래버레이션</a></li>
+                                <li><a href="#">베스트 셀러</a></li>
+                                <li><a href="#">선글라스</a></li>
+                                <li><a href="#">안경</a></li>
+                            </ul><!-- .depth-02 end -->
+                        </li>
+                        <li>
+                            <a href="#" class="depth-01">Collections</a>
+                            <ul class="depth-02">
+                                <li><a href="#">2025 컬렉션</a></li>
+                                <li><a href="#">2024 컬렉션</a></li>
+                                <li><a href="#">캠페인</a></li>
+                                <li><a href="#">에도토리얼</a></li>
+                                <li><a href="#">룩북</a></li>
+                            </ul><!-- .depth-02 end -->
+                        </li>
+                        <li>
+                            <a href="#" class="depth-01">Store</a>
+                            <ul class="depth-02">
+                                <li><a href="#">플러그십 스토어 소개</a></li>
+                                <li><a href="#">매장 찾기</a></li>
+                            </ul><!-- .depth-02 end -->
+                        </li>
+                        <li>
+                            <a href="#" class="depth-01">About</a>
+                            <ul class="depth-02">
+                                <li><a href="#">브랜드 철학</a></li>
+                                <li><a href="#">연혁</a></li>
+                                <li><a href="#">지속가능성</a></li>
+                            </ul><!-- .depth-02 end -->
+                        </li>
+                        <li>
+                            <a href="#" class="depth-01">Support</a>
+                            <ul class="depth-02">
+                                <li><a href="#">제품 보증 & 관리</a></li>
+                                <li><a href="#">배송 및 반품</a></li>
+                                <li><a href="#">자주 묻는 질문</a></li>
+                                <li><a href="#">문의</a></li>
+                            </ul><!-- .depth-02 end -->
+                        </li>
+                    </ul><!-- gnb -->
+                </div><!-- nav -->
+                <div class="bg"><span>내비게이션 배경</span></div>
+
+                <div class="util">
+                    <ul>
+                        <li><a href="#"><img src="img/search-icon.png" alt="검색아이콘"></a></li>
+                        <li><a href="#"><img src="img/my-icon.png" alt="마이아이콘"></a></li>
+                        <li><a href="#"><img src="img/cart-icon.png" alt="장바구니아이콘"></a></li>
+                    </ul>
+                </div><!-- util -->
+            </div><!-- inner -->
+        </header><!-- header -->
+
+
+        <div class="main">
+            <div class="inner">
+                <section class="main_visual">
+                    <div class="swiper main">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <img src="img/main-img-1.png" alt="메인이미지-1">
+                                <div class="text">
+                                    <strong>2025 BOLD COLLECTION</strong>
+                                </div><!-- text -->
+                                <div class="button">
+                                    <button class="left">구매하기</button>
+                                    <button class="right">캠페인 보기</button>
+                                </div><!-- button -->
+                            </div><!-- swiper-slide -->
+
+                            <div class="swiper-slide">
+                                <img src="img/main-img-2.png" alt="메인이미지-2">
+                                <div class="text">
+                                    <strong>Pocket Collection</strong>
+                                </div><!-- text -->
+                                <div class="button">
+                                    <button class="left">구매하기</button>
+                                    <button class="right">캠페인 보기</button>
+                                </div><!-- button -->
+                            </div><!-- swiper-slide -->
+
+                            <div class="swiper-slide">
+                                <img src="img/main-img-3.png" alt="메인이미지-3">
+                                <div class="text">
+                                    <strong>New In</strong>
+                                </div><!-- text -->
+                                <div class="button">
+                                    <button class="left">2025 컬렉션</button>
+                                    <button class="right">볼드 컬렉션</button>
+                                </div><!-- button -->
+                            </div><!-- swiper-slide -->
+
+                            <div class="swiper-slide">
+                                <img src="img/main-img-4.png" alt="메인이미지-4">
+                                <div class="text">
+                                    <img src="img/main-4-img.png" alt="타이틀이미지">
+                                </div><!-- text -->
+                                <div class="button">
+                                    <button class="left">구매하기</button>
+                                    <button class="right">캠페인 보기</button>
+                                </div><!-- button -->
+                            </div><!-- swiper-slide -->
+
+                            <div class="swiper-slide">
+                                <img src="img/main-img-5.png" alt="메인이미지-5">
+                                <div class="text">
+                                    <strong>2025 Collection</strong>
+                                </div><!-- text -->
+                                <div class="button">
+                                    <button class="left">구매하기</button>
+                                    <button class="right">캠페인 보기</button>
+                                </div><!-- button -->
+                            </div><!-- swiper-slide -->
+
+                        </div><!-- swiper-wrapper -->
+                        <div class="swiper-pagination main-pagination"></div>
+                    </div><!-- swiper mySwiper -->
+                </section><!-- main_visual -->
+
+
+
+                <section class="section-01">
+                    <div class="new_main">
+                        <img src="img/newproduct-img.png" alt="신제품대표이미지">
+                        <div class="title">
+                            <h2>NEW<br>PRODUCT</h2>
+                            <p>새롭게 선보이는 젠틀몬스터 신제품</p>
+                        </div><!-- title -->
+                    </div><!-- new_main -->
+
+                    <div class="swiper newproduct">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="list-01">
+                                    <div class="item">
+                                        <img src="img/newproduct-item-1-1.png" alt="리스트1-1-이미지">
+                                        <div class="tab_btn">
+                                            <button class="off active"><img src="img/save-off-icon.png" alt=""></button>
+                                            <button class="on"><img src="img/save-on-icon.png" alt=""></button>
+                                        </div><!-- tab_btn -->
+                                        <div class="text">
+                                            <p>고스 02</p>
+                                            <b>₩450,000</b>
+                                        </div><!-- text -->
+                                    </div><!-- item -->
+                                    <div class="item">
+                                        <img src="img/newproduct-item-1-2.png" alt="리스트1-2-이미지">
+                                        <div class="tab_btn">
+                                            <button class="off active"><img src="img/save-off-icon.png" alt=""></button>
+                                            <button class="on"><img src="img/save-on-icon.png" alt=""></button>
+                                        </div><!-- tab_btn -->
+                                        <div class="text">
+                                            <p>힙노시스 A02</p>
+                                            <b>₩390,000</b>
+                                        </div><!-- text -->
+                                    </div><!-- item -->
+                                    <div class="item">
+                                        <img src="img/newproduct-item-1-3.png" alt="리스트1-3-이미지">
+                                        <div class="tab_btn">
+                                            <button class="off active"><img src="img/save-off-icon.png" alt=""></button>
+                                            <button class="on"><img src="img/save-on-icon.png" alt=""></button>
+                                        </div><!-- tab_btn -->
+                                        <div class="text">
+                                            <p>파라노이드 02</p>
+                                            <b>₩350,000</b>
+                                        </div><!-- text -->
+                                    </div><!-- item -->
+                                    <div class="item">
+                                        <img src="img/newproduct-item-1-4.png" alt="리스트1-4-이미지">
+                                        <div class="tab_btn">
+                                            <button class="off active"><img src="img/save-off-icon.png" alt=""></button>
+                                            <button class="on"><img src="img/save-on-icon.png" alt=""></button>
+                                        </div><!-- tab_btn -->
+                                        <div class="text">
+                                            <p>스피시즈 MSV2</p>
+                                            <b>₩430,000</b>
+                                        </div><!-- text -->
+                                    </div><!-- item -->
+                                </div><!-- list-01 -->
+                                <div class="list-02">
+                                    <div class="item">
+                                        <div class="img_wrap">
+                                            <img src="img/newproduct-item-1-5.png" alt="리스트1-5-이미지" class="default">
+                                            <img src="img/newproduct-item-1-5-hover.png" alt="리스트1-5-이미지-hover" class="hover">
+                                        </div><!-- img_wrap -->
+                                        <div class="tab_btn">
+                                            <button class="off active"><img src="img/save-off-icon.png" alt=""></button>
+                                            <button class="on"><img src="img/save-on-icon.png" alt=""></button>
+                                        </div><!-- tab_btn -->
+                                        <div class="text">
+                                            <p>브루탈 02</p>
+                                            <b>₩370,000</b>
+                                        </div><!-- text -->
+                                    </div><!-- item -->
+                                    <div class="item">
+                                        <div class="img_wrap">
+                                            <img src="img/newproduct-item-1-6.png" alt="리스트1-6-이미지" class="default">
+                                            <img src="img/newproduct-item-1-6-hover.png" alt="리스트1-6-이미지-hover" class="hover">
+                                        </div><!-- img_wrap -->
+                                        <div class="tab_btn">
+                                            <button class="off active"><img src="img/save-off-icon.png" alt=""></button>
+                                            <button class="on"><img src="img/save-on-icon.png" alt=""></button>
+                                        </div><!-- tab_btn -->
+                                        <div class="text">
+                                            <p>M87 R6</p>
+                                            <b>₩370,000</b>
+                                        </div><!-- text -->
+                                    </div><!-- item -->
+                                    <div class="item">
+                                        <div class="img_wrap">
+                                            <img src="img/newproduct-item-1-7.png" alt="리스트1-7-이미지" class="default">
+                                            <img src="img/newproduct-item-1-7-hover.png" alt="리스트1-7-이미지-hover"
+                                                class="hover">
+                                        </div><!-- img_wrap -->
+                                        <div class="tab_btn">
+                                            <button class="off active"><img src="img/save-off-icon.png" alt=""></button>
+                                            <button class="on"><img src="img/save-on-icon.png" alt=""></button>
+                                        </div><!-- tab_btn -->
+                                        <div class="text">
+                                            <p>에이펙스 01</p>
+                                            <b>₩390,000</b>
+                                        </div><!-- text -->
+                                    </div><!-- item -->
+                                </div><!-- list-02 -->
+                            </div><!-- swiper-slide -->
+
+                            <div class="swiper-slide">
+                                <div class="list-01">
+                                    <div class="item">
+                                        <img src="img/newproduct-item-2-1.png" alt="리스트2-1-이미지">
+                                        <div class="tab_btn">
+                                            <button class="off active"><img src="img/save-off-icon.png" alt=""></button>
+                                            <button class="on"><img src="img/save-on-icon.png" alt=""></button>
+                                        </div><!-- tab_btn -->
+                                        <div class="text">
+                                            <p>모와 01</p>
+                                            <b>₩330,000</b>
+                                        </div><!-- text -->
+                                    </div><!-- item -->
+                                    <div class="item">
+                                        <img src="img/newproduct-item-2-2.png" alt="리스트2-2-이미지">
+                                        <div class="tab_btn">
+                                            <button class="off active"><img src="img/save-off-icon.png" alt=""></button>
+                                            <button class="on"><img src="img/save-on-icon.png" alt=""></button>
+                                        </div><!-- tab_btn -->
+                                        <div class="text">
+                                            <p>파타 01</p>
+                                            <b>₩350,000</b>
+                                        </div><!-- text -->
+                                    </div><!-- item -->
+                                    <div class="item">
+                                        <img src="img/newproduct-item-2-3.png" alt="리스트2-3-이미지">
+                                        <div class="tab_btn">
+                                            <button class="off active"><img src="img/save-off-icon.png" alt=""></button>
+                                            <button class="on"><img src="img/save-on-icon.png" alt=""></button>
+                                        </div><!-- tab_btn -->
+                                        <div class="text">
+                                            <p>조제 01</p>
+                                            <b>₩320,000</b>
+                                        </div><!-- text -->
+                                    </div><!-- item -->
+                                    <div class="item">
+                                        <img src="img/newproduct-item-2-4.png" alt="리스트2-4-이미지">
+                                        <div class="tab_btn">
+                                            <button class="off active"><img src="img/save-off-icon.png" alt=""></button>
+                                            <button class="on"><img src="img/save-on-icon.png" alt=""></button>
+                                        </div><!-- tab_btn -->
+                                        <div class="text">
+                                            <p>알토 01</p>
+                                            <b>₩320,000</b>
+                                        </div><!-- text -->
+                                    </div><!-- item -->
+                                </div><!-- list-01 -->
+                                <div class="list-02">
+                                    <div class="item">
+                                        <div class="img_wrap">
+                                            <img src="img/newproduct-item-2-5.png" alt="리스트2-5-이미지" class="default">
+                                            <img src="img/newproduct-item-2-5-hover.png" alt="리스트2-5-이미지-hover"
+                                                class="hover">
+                                        </div><!-- img_wrap -->
+                                        <div class="tab_btn">
+                                            <button class="off active"><img src="img/save-off-icon.png" alt=""></button>
+                                            <button class="on"><img src="img/save-on-icon.png" alt=""></button>
+                                        </div><!-- tab_btn -->
+                                        <div class="text">
+                                            <p>릭스 01</p>
+                                            <b>₩340,000</b>
+                                        </div><!-- text -->
+                                    </div><!-- item -->
+                                    <div class="item">
+                                        <div class="img_wrap">
+                                            <img src="img/newproduct-item-2-6.png" alt="리스트2-6-이미지" class="default">
+                                            <img src="img/newproduct-item-2-6-hover.png" alt="리스트2-6-이미지-hover"
+                                                class="hover">
+                                        </div><!-- img_wrap -->
+                                        <div class="tab_btn">
+                                            <button class="off active"><img src="img/save-off-icon.png" alt=""></button>
+                                            <button class="on"><img src="img/save-on-icon.png" alt=""></button>
+                                        </div><!-- tab_btn -->
+                                        <div class="text">
+                                            <p>카프카 01</p>
+                                            <b>₩365,000</b>
+                                        </div><!-- text -->
+                                    </div><!-- item -->
+                                    <div class="item">
+                                        <div class="img_wrap">
+                                            <img src="img/newproduct-item-2-7.png" alt="리스트2-7-이미지" class="default">
+                                            <img src="img/newproduct-item-2-7-hover.png" alt="리스트2-7-이미지-hover"
+                                                class="hover">
+                                        </div><!-- img_wrap -->
+                                        <div class="tab_btn">
+                                            <button class="off active"><img src="img/save-off-icon.png" alt=""></button>
+                                            <button class="on"><img src="img/save-on-icon.png" alt=""></button>
+                                        </div><!-- tab_btn -->
+                                        <div class="text">
+                                            <p>소마 01</p>
+                                            <b>₩365,000</b>
+                                        </div><!-- text -->
+                                    </div><!-- item -->
+                                </div><!-- list-02 -->
+                            </div><!-- swiper-slide -->
+
+                            <div class="swiper-slide">
+                                <div class="list-01">
+                                    <div class="item">
+                                        <img src="img/newproduct-item-3-1.png" alt="리스트3-1-이미지">
+                                        <div class="tab_btn">
+                                            <button class="off active"><img src="img/save-off-icon.png" alt=""></button>
+                                            <button class="on"><img src="img/save-on-icon.png" alt=""></button>
+                                        </div><!-- tab_btn -->
+                                        <div class="text">
+                                            <p>콤트 GC9</p>
+                                            <b>₩330,000</b>
+                                        </div><!-- text -->
+                                    </div><!-- item -->
+                                    <div class="item">
+                                        <img src="img/newproduct-item-3-2.png" alt="리스트3-2-이미지">
+                                        <div class="tab_btn">
+                                            <button class="off active"><img src="img/save-off-icon.png" alt=""></button>
+                                            <button class="on"><img src="img/save-on-icon.png" alt=""></button>
+                                        </div><!-- tab_btn -->
+                                        <div class="text">
+                                            <p>오드 01</p>
+                                            <b>₩330,000</b>
+                                        </div><!-- text -->
+                                    </div><!-- item -->
+                                    <div class="item">
+                                        <img src="img/newproduct-item-3-3.png" alt="리스트3-3-이미지">
+                                        <div class="tab_btn">
+                                            <button class="off active"><img src="img/save-off-icon.png" alt=""></button>
+                                            <button class="on"><img src="img/save-on-icon.png" alt=""></button>
+                                        </div><!-- tab_btn -->
+                                        <div class="text">
+                                            <p>칸트 01</p>
+                                            <b>₩365,000</b>
+                                        </div><!-- text -->
+                                    </div><!-- item -->
+                                    <div class="item">
+                                        <img src="img/newproduct-item-3-4.png" alt="리스트3-4-이미지">
+                                        <div class="tab_btn">
+                                            <button class="off active"><img src="img/save-off-icon.png" alt=""></button>
+                                            <button class="on"><img src="img/save-on-icon.png" alt=""></button>
+                                        </div><!-- tab_btn -->
+                                        <div class="text">
+                                            <p>로코 01</p>
+                                            <b>₩330,000</b>
+                                        </div><!-- text -->
+                                    </div><!-- item -->
+                                </div><!-- list-01 -->
+                                <div class="list-02">
+                                    <div class="item">
+                                        <div class="img_wrap">
+                                            <img src="img/newproduct-item-3-5.png" alt="리스트3-5-이미지" class="default">
+                                            <img src="img/newproduct-item-3-5-hover.png" alt="리스트3-5-이미지-hover"
+                                                class="hover">
+                                        </div><!-- img_wrap -->
+                                        <div class="tab_btn">
+                                            <button class="off active"><img src="img/save-off-icon.png" alt=""></button>
+                                            <button class="on"><img src="img/save-on-icon.png" alt=""></button>
+                                        </div><!-- tab_btn -->
+                                        <div class="text">
+                                            <p>EQ 01</p>
+                                            <b>₩340,000</b>
+                                        </div><!-- text -->
+                                    </div><!-- item -->
+                                    <div class="item">
+                                        <div class="img_wrap">
+                                            <img src="img/newproduct-item-3-6.png" alt="리스트3-6-이미지" class="default">
+                                            <img src="img/newproduct-item-3-6-hover.png" alt="리스트3-6-이미지-hover"
+                                                class="hover">
+                                        </div><!-- img_wrap -->
+                                        <div class="tab_btn">
+                                            <button class="off active"><img src="img/save-off-icon.png" alt=""></button>
+                                            <button class="on"><img src="img/save-on-icon.png" alt=""></button>
+                                        </div><!-- tab_btn -->
+                                        <div class="text">
+                                            <p>벌스 01</p>
+                                            <b>₩340,000</b>
+                                        </div><!-- text -->
+                                    </div><!-- item -->
+                                    <div class="item">
+                                        <div class="img_wrap">
+                                            <img src="img/newproduct-item-3-7.png" alt="리스트3-7-이미지" class="default">
+                                            <img src="img/newproduct-item-3-7-hover.png" alt="리스트3-7-이미지-hover"
+                                                class="hover">
+                                        </div><!-- img_wrap -->
+                                        <div class="tab_btn">
+                                            <button class="off active"><img src="img/save-off-icon.png" alt=""></button>
+                                            <button class="on"><img src="img/save-on-icon.png" alt=""></button>
+                                        </div><!-- tab_btn -->
+                                        <div class="text">
+                                            <p>헤세 01</p>
+                                            <b>₩320,000</b>
+                                        </div><!-- text -->
+                                    </div><!-- item -->
+                                </div><!-- list-02 -->
+                            </div><!-- swiper-slide -->
+
+                            <div class="swiper-slide">
+                                <div class="list-01">
+                                    <div class="item">
+                                        <img src="img/newproduct-item-4-1.png" alt="리스트4-1-이미지">
+                                        <div class="tab_btn">
+                                            <button class="off active"><img src="img/save-off-icon.png" alt=""></button>
+                                            <button class="on"><img src="img/save-on-icon.png" alt=""></button>
+                                        </div><!-- tab_btn -->
+                                        <div class="text">
+                                            <p>모쉬 02</p>
+                                            <b>₩380,000</b>
+                                        </div><!-- text -->
+                                    </div><!-- item -->
+                                    <div class="item">
+                                        <img src="img/newproduct-item-4-2.png" alt="리스트4-2-이미지">
+                                        <div class="tab_btn">
+                                            <button class="off active"><img src="img/save-off-icon.png" alt=""></button>
+                                            <button class="on"><img src="img/save-on-icon.png" alt=""></button>
+                                        </div><!-- tab_btn -->
+                                        <div class="text">
+                                            <p>레이지 01</p>
+                                            <b>₩365,000</b>
+                                        </div><!-- text -->
+                                    </div><!-- item -->
+                                    <div class="item">
+                                        <img src="img/newproduct-item-4-3.png" alt="리스트4-3-이미지">
+                                        <div class="tab_btn">
+                                            <button class="off active"><img src="img/save-off-icon.png" alt=""></button>
+                                            <button class="on"><img src="img/save-on-icon.png" alt=""></button>
+                                        </div><!-- tab_btn -->
+                                        <div class="text">
+                                            <p>퓨리 02(G)</p>
+                                            <b>₩350,000</b>
+                                        </div><!-- text -->
+                                    </div><!-- item -->
+                                    <div class="item">
+                                        <img src="img/newproduct-item-4-4.png" alt="리스트4-4-이미지">
+                                        <div class="tab_btn">
+                                            <button class="off active"><img src="img/save-off-icon.png" alt=""></button>
+                                            <button class="on"><img src="img/save-on-icon.png" alt=""></button>
+                                        </div><!-- tab_btn -->
+                                        <div class="text">
+                                            <p>신스 01</p>
+                                            <b>₩340,000</b>
+                                        </div><!-- text -->
+                                    </div><!-- item -->
+                                </div><!-- list-01 -->
+                                <div class="list-02">
+                                    <div class="item">
+                                        <div class="img_wrap">
+                                            <img src="img/newproduct-item-4-5.png" alt="리스트4-5-이미지" class="default">
+                                            <img src="img/newproduct-item-4-5-hover.png" alt="리스트4-5-이미지-hover"
+                                                class="hover">
+                                        </div><!-- img_wrap -->
+                                        <div class="tab_btn">
+                                            <button class="off active"><img src="img/save-off-icon.png" alt=""></button>
+                                            <button class="on"><img src="img/save-on-icon.png" alt=""></button>
+                                        </div><!-- tab_btn -->
+                                        <div class="text">
+                                            <p>본 01</p>
+                                            <b>₩320,000</b>
+                                        </div><!-- text -->
+                                    </div><!-- item -->
+                                    <div class="item">
+                                        <div class="img_wrap">
+                                            <img src="img/newproduct-item-4-6.png" alt="리스트4-6-이미지" class="default">
+                                            <img src="img/newproduct-item-4-6-hover.png" alt="리스트4-6-이미지-hover"
+                                                class="hover">
+                                        </div><!-- img_wrap -->
+                                        <div class="tab_btn">
+                                            <button class="off active"><img src="img/save-off-icon.png" alt=""></button>
+                                            <button class="on"><img src="img/save-on-icon.png" alt=""></button>
+                                        </div><!-- tab_btn -->
+                                        <div class="text">
+                                            <p>에덴 02</p>
+                                            <b>₩330,000</b>
+                                        </div><!-- text -->
+                                    </div><!-- item -->
+                                    <div class="item">
+                                        <div class="img_wrap">
+                                            <img src="img/newproduct-item-4-7.png" alt="리스트4-7-이미지" class="default">
+                                            <img src="img/newproduct-item-4-7-hover.png" alt="리스트4-7-이미지-hover"
+                                                class="hover">
+                                        </div><!-- img_wrap -->
+                                        <div class="tab_btn">
+                                            <button class="off active"><img src="img/save-off-icon.png" alt=""></button>
+                                            <button class="on"><img src="img/save-on-icon.png" alt=""></button>
+                                        </div><!-- tab_btn -->
+                                        <div class="text">
+                                            <p>사가 02</p>
+                                            <b>₩340,000</b>
+                                        </div><!-- text -->
+                                    </div><!-- item -->
+                                </div><!-- list-02 -->
+                            </div><!-- swiper-slide -->
+                        </div>
+                        <div class="swiper-pagination newproduct-pagination"></div>
+                    </div>
+                </section><!-- section-01 -->
+
+
+
+                <section class="section-02">
+                    <div class="collection">
+                        <div class="list-01">
+                            <div class="item">
+                                <div class="img_wrap">
+                                    <img src="img/collection-item-1.png" alt="컬렉션이미지-1" class="default">
+                                    <img src="img/collection-item-1-hover.png" alt="컬렉션이미지-1-hover" class="hover">
+                                </div><!-- img_wrap -->
+                                <div class="tab_btn">
+                                    <button class="off active"><img src="img/save-off-icon.png" alt=""></button>
+                                    <button class="on"><img src="img/save-on-icon.png" alt=""></button>
+                                </div><!-- tab_btn -->
+                                <div class="text">
+                                    <p>캐럿 02</p>
+                                    <b>₩360,000</b>
+                                </div><!-- text -->
+                            </div><!-- item -->
+                            <div class="item">
+                                <div class="img_wrap">
+                                    <img src="img/collection-item-2.png" alt="컬렉션이미지-2" class="default">
+                                    <img src="img/collection-item-2-hover.png" alt="컬렉션이미지-2-hover" class="hover">
+                                </div><!-- img_wrap -->
+                                <div class="tab_btn">
+                                    <button class="off active"><img src="img/save-off-icon.png" alt=""></button>
+                                    <button class="on"><img src="img/save-on-icon.png" alt=""></button>
+                                </div><!-- tab_btn -->
+                                <div class="text">
+                                    <p>베가스 W2</p>
+                                    <b>₩380,000</b>
+                                </div><!-- text -->
+                            </div><!-- item -->
+                        </div><!-- list-01 -->
+                        <div class="collection_main">
+                            <img src="img/collection-img.png" alt="컬렉션대표이미지">
+                            <h2>2025 Collection</h2>
+                        </div><!-- collection_main -->
+                        <div class="list-02">
+                            <div class="item">
+                                <div class="img_wrap">
+                                    <img src="img/collection-item-3.png" alt="컬렉션이미지-3" class="default">
+                                    <img src="img/collection-item-3-hover.png" alt="컬렉션이미지-3-hover" class="hover">
+                                </div><!-- img_wrap -->
+                                <div class="tab_btn">
+                                    <button class="off active"><img src="img/save-off-icon.png" alt=""></button>
+                                    <button class="on"><img src="img/save-on-icon.png" alt=""></button>
+                                </div><!-- tab_btn -->
+                                <div class="text">
+                                    <p>오로라 02(VYG)</p>
+                                    <b>₩360,000</b>
+                                </div><!-- text -->
+                            </div><!-- item -->
+                            <div class="item">
+                                <div class="img_wrap">
+                                    <img src="img/collection-item-4.png" alt="컬렉션이미지-4" class="default">
+                                    <img src="img/collection-item-4-hover.png" alt="컬렉션이미지-4-hover" class="hover">
+                                </div><!-- img_wrap -->
+                                <div class="tab_btn">
+                                    <button class="off active"><img src="img/save-off-icon.png" alt=""></button>
+                                    <button class="on"><img src="img/save-on-icon.png" alt=""></button>
+                                </div><!-- tab_btn -->
+                                <div class="text">
+                                    <p>키이라 02(BLM)</p>
+                                    <b>₩500,000</b>
+                                </div><!-- text -->
+                            </div><!-- item -->
+                        </div><!-- list-02 -->
+                    </div><!-- collection -->
+                    <div class="text">
+                        <p>젠틀몬스터의 2025 주얼리 컬렉션을 소개합니다.<br>주얼리 디테일이 템플에 장식된 제품부터 진주 목걸이를 연상시키는 스테이트먼트 피스에 이르기까지 주얼리의 화려함을
+                            통해<br>젠틀몬스터만의 독창적인 미적 감각을 드러내는 2025 컬렉션을 만나보세요.</p>
+                        <button>더보기</button>
+                    </div><!-- text -->
+                </section><!-- section-02 -->
+
+
+                <section class="section-03">
+                    <div class="title">
+                        <h2>TOP 20 BEST SELLER</h2>
+                        <img src="img/all.png" alt="모두보기버튼">
+                    </div><!-- title -->
+                    <div class="list">
+                        <div class="swiper best">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <div class="item">
+                                        <div class="img_wrap">
+                                            <img src="img/best-item-1.png" alt="베스트셀러이미지-1" class="default">
+                                            <img src="img/best-item-1-hover.png" alt="베스트셀러이미지-1-hover" class="hover">
+                                        </div><!-- img_wrap -->
+                                        <div class="tab_btn">
+                                            <button class="off active"><img src="img/save-off-icon.png" alt=""></button>
+                                            <button class="on"><img src="img/save-on-icon.png" alt=""></button>
+                                        </div><!-- tab_btn -->
+                                        <div class="text">
+                                            <p>지젤 T1</p>
+                                            <b>₩300,000</b>
+                                        </div><!-- text -->
+                                    </div><!-- item -->
+                                </div><!-- swiper-slide -->
+                                <div class="swiper-slide">
+                                    <div class="item">
+                                        <div class="img_wrap">
+                                            <img src="img/best-item-2.png" alt="베스트셀러이미지-2" class="default">
+                                            <img src="img/best-item-2-hover.png" alt="베스트셀러이미지-2-hover" class="hover">
+                                        </div><!-- img_wrap -->
+                                        <div class="tab_btn">
+                                            <button class="off active"><img src="img/save-off-icon.png" alt=""></button>
+                                            <button class="on"><img src="img/save-on-icon.png" alt=""></button>
+                                        </div><!-- tab_btn -->
+                                        <div class="text">
+                                            <p>누메르 01(G)</p>
+                                            <b>₩279,000</b>
+                                        </div><!-- text -->
+                                    </div><!-- item -->
+                                </div><!-- swiper-slide -->
+                                <div class="swiper-slide">
+                                    <div class="item">
+                                        <div class="img_wrap">
+                                            <img src="img/best-item-3.png" alt="베스트셀러이미지-3" class="default">
+                                            <img src="img/best-item-3-hover.png" alt="베스트셀러이미지-3-hover" class="hover">
+                                        </div><!-- img_wrap -->
+                                        <div class="tab_btn">
+                                            <button class="off active"><img src="img/save-off-icon.png" alt=""></button>
+                                            <button class="on"><img src="img/save-on-icon.png" alt=""></button>
+                                        </div><!-- tab_btn -->
+                                        <div class="text">
+                                            <p>데이즈 데이 01(V)</p>
+                                            <b>₩279,000</b>
+                                        </div><!-- text -->
+                                    </div><!-- item -->
+                                </div><!-- swiper-slide -->
+                                <div class="swiper-slide">
+                                    <div class="item">
+                                        <div class="img_wrap">
+                                            <img src="img/best-item-4.png" alt="베스트셀러이미지-4" class="default">
+                                            <img src="img/best-item-4-hover.png" alt="베스트셀러이미지-4-hover" class="hover">
+                                        </div><!-- img_wrap -->
+                                        <div class="tab_btn">
+                                            <button class="off active"><img src="img/save-off-icon.png" alt=""></button>
+                                            <button class="on"><img src="img/save-on-icon.png" alt=""></button>
+                                        </div><!-- tab_btn -->
+                                        <div class="text">
+                                            <p>카프카 01(BL)</p>
+                                            <b>₩365,000</b>
+                                        </div><!-- text -->
+                                    </div><!-- item -->
+                                </div><!-- swiper-slide -->
+                                <div class="swiper-slide">
+                                    <div class="item">
+                                        <div class="img_wrap">
+                                            <img src="img/best-item-5.png" alt="베스트셀러이미지-5" class="default">
+                                            <img src="img/best-item-5-hover.png" alt="베스트셀러이미지-5-hover" class="hover">
+                                        </div><!-- img_wrap -->
+                                        <div class="tab_btn">
+                                            <button class="off active"><img src="img/save-off-icon.png" alt=""></button>
+                                            <button class="on"><img src="img/save-on-icon.png" alt=""></button>
+                                        </div><!-- tab_btn -->
+                                        <div class="text">
+                                            <p>사가 02(V)</p>
+                                            <b>₩340,000</b>
+                                        </div><!-- text -->
+                                    </div><!-- item -->
+                                </div><!-- swiper-slide -->
+                                <div class="swiper-slide">
+                                    <div class="item">
+                                        <div class="img_wrap">
+                                            <img src="img/best-item-6.png" alt="베스트셀러이미지-6" class="default">
+                                            <img src="img/best-item-6-hover.png" alt="베스트셀러이미지-6-hover" class="hover">
+                                        </div><!-- img_wrap -->
+                                        <div class="tab_btn">
+                                            <button class="off active"><img src="img/save-off-icon.png" alt=""></button>
+                                            <button class="on"><img src="img/save-on-icon.png" alt=""></button>
+                                        </div><!-- tab_btn -->
+                                        <div class="text">
+                                            <p>뉴 허 KC2</p>
+                                            <b>₩289,000</b>
+                                        </div><!-- text -->
+                                    </div><!-- item -->
+                                </div><!-- swiper-slide -->
+                                <div class="swiper-slide">
+                                    <div class="item">
+                                        <div class="img_wrap">
+                                            <img src="img/best-item-7.png" alt="베스트셀러이미지-7" class="default">
+                                            <img src="img/best-item-7-hover.png" alt="베스트셀러이미지-7-hover" class="hover">
+                                        </div><!-- img_wrap -->
+                                        <div class="tab_btn">
+                                            <button class="off active"><img src="img/save-off-icon.png" alt=""></button>
+                                            <button class="on"><img src="img/save-on-icon.png" alt=""></button>
+                                        </div><!-- tab_btn -->
+                                        <div class="text">
+                                            <p>레이디 랭 RC3</p>
+                                            <b>₩289,000</b>
+                                        </div><!-- text -->
+                                    </div><!-- item -->
+                                </div><!-- swiper-slide -->
+                                <div class="swiper-slide">
+                                    <div class="item">
+                                        <div class="img_wrap">
+                                            <img src="img/best-item-8.png" alt="베스트셀러이미지-8" class="default">
+                                            <img src="img/best-item-8-hover.png" alt="베스트셀러이미지-8-hover" class="hover">
+                                        </div><!-- img_wrap -->
+                                        <div class="tab_btn">
+                                            <button class="off active"><img src="img/save-off-icon.png" alt=""></button>
+                                            <button class="on"><img src="img/save-on-icon.png" alt=""></button>
+                                        </div><!-- tab_btn -->
+                                        <div class="text">
+                                            <p>데본 BRC17</p>
+                                            <b>₩340,000</b>
+                                        </div><!-- text -->
+                                    </div><!-- item -->
+                                </div><!-- swiper-slide -->
+                                <div class="swiper-slide">
+                                    <div class="item">
+                                        <div class="img_wrap">
+                                            <img src="img/best-item-9.png" alt="베스트셀러이미지-9" class="default">
+                                            <img src="img/best-item-9-hover.png" alt="베스트셀러이미지-9-hover" class="hover">
+                                        </div><!-- img_wrap -->
+                                        <div class="tab_btn">
+                                            <button class="off active"><img src="img/save-off-icon.png" alt=""></button>
+                                            <button class="on"><img src="img/save-on-icon.png" alt=""></button>
+                                        </div><!-- tab_btn -->
+                                        <div class="text">
+                                            <p>에덴 02(GM)</p>
+                                            <b>₩330,000</b>
+                                        </div><!-- text -->
+                                    </div><!-- item -->
+                                </div><!-- swiper-slide -->
+                                <div class="swiper-slide">
+                                    <div class="item">
+                                        <div class="img_wrap">
+                                            <img src="img/best-item-10.png" alt="베스트셀러이미지-10" class="default">
+                                            <img src="img/best-item-10-hover.png" alt="베스트셀러이미지-10-hover" class="hover">
+                                        </div><!-- img_wrap -->
+                                        <div class="tab_btn">
+                                            <button class="off active"><img src="img/save-off-icon.png" alt=""></button>
+                                            <button class="on"><img src="img/save-on-icon.png" alt=""></button>
+                                        </div><!-- tab_btn -->
+                                        <div class="text">
+                                            <p>코로리 N6</p>
+                                            <b>₩300,000</b>
+                                        </div><!-- text -->
+                                    </div><!-- item -->
+                                </div><!-- swiper-slide -->
+                                <div class="swiper-slide">
+                                    <div class="item">
+                                        <div class="img_wrap">
+                                            <img src="img/best-item-11.png" alt="베스트셀러이미지-11" class="default">
+                                            <img src="img/best-item-11-hover.png" alt="베스트셀러이미지-11-hover" class="hover">
+                                        </div><!-- img_wrap -->
+                                        <div class="tab_btn">
+                                            <button class="off active"><img src="img/save-off-icon.png" alt=""></button>
+                                            <button class="on"><img src="img/save-on-icon.png" alt=""></button>
+                                        </div><!-- tab_btn -->
+                                        <div class="text">
+                                            <p>딘 01(G)</p>
+                                            <b>₩279,000</b>
+                                        </div><!-- text -->
+                                    </div><!-- item -->
+                                </div><!-- swiper-slide -->
+                                <div class="swiper-slide">
+                                    <div class="item">
+                                        <div class="img_wrap">
+                                            <img src="img/best-item-12.png" alt="베스트셀러이미지-12" class="default">
+                                            <img src="img/best-item-12-hover.png" alt="베스트셀러이미지-12-hover" class="hover">
+                                        </div><!-- img_wrap -->
+                                        <div class="tab_btn">
+                                            <button class="off active"><img src="img/save-off-icon.png" alt=""></button>
+                                            <button class="on"><img src="img/save-on-icon.png" alt=""></button>
+                                        </div><!-- tab_btn -->
+                                        <div class="text">
+                                            <p>던스 01</p>
+                                            <b>₩340,000</b>
+                                        </div><!-- text -->
+                                    </div><!-- item -->
+                                </div><!-- swiper-slide -->
+                                <div class="swiper-slide">
+                                    <div class="item">
+                                        <div class="img_wrap">
+                                            <img src="img/best-item-13.png" alt="베스트셀러이미지-13" class="default">
+                                            <img src="img/best-item-13-hover.png" alt="베스트셀러이미지-13-hover" class="hover">
+                                        </div><!-- img_wrap -->
+                                        <div class="tab_btn">
+                                            <button class="off active"><img src="img/save-off-icon.png" alt=""></button>
+                                            <button class="on"><img src="img/save-on-icon.png" alt=""></button>
+                                        </div><!-- tab_btn -->
+                                        <div class="text">
+                                            <p>코코아 BRC11</p>
+                                            <b>₩330,000</b>
+                                        </div><!-- text -->
+                                    </div><!-- item -->
+                                </div><!-- swiper-slide -->
+                                <div class="swiper-slide">
+                                    <div class="item">
+                                        <div class="img_wrap">
+                                            <img src="img/best-item-14.png" alt="베스트셀러이미지-14" class="default">
+                                            <img src="img/best-item-14-hover.png" alt="베스트셀러이미지-14-hover" class="hover">
+                                        </div><!-- img_wrap -->
+                                        <div class="tab_btn">
+                                            <button class="off active"><img src="img/save-off-icon.png" alt=""></button>
+                                            <button class="on"><img src="img/save-on-icon.png" alt=""></button>
+                                        </div><!-- tab_btn -->
+                                        <div class="text">
+                                            <p>브리즈비 01(BL)</p>
+                                            <b>₩279,000</b>
+                                        </div><!-- text -->
+                                    </div><!-- item -->
+                                </div><!-- swiper-slide -->
+                                <div class="swiper-slide">
+                                    <div class="item">
+                                        <div class="img_wrap">
+                                            <img src="img/best-item-15.png" alt="베스트셀러이미지-15" class="default">
+                                            <img src="img/best-item-15-hover.png" alt="베스트셀러이미지-15-hover" class="hover">
+                                        </div><!-- img_wrap -->
+                                        <div class="tab_btn">
+                                            <button class="off active"><img src="img/save-off-icon.png" alt=""></button>
+                                            <button class="on"><img src="img/save-on-icon.png" alt=""></button>
+                                        </div><!-- tab_btn -->
+                                        <div class="text">
+                                            <p>바이 로우 01(BR)</p>
+                                            <b>₩289,000</b>
+                                        </div><!-- text -->
+                                    </div><!-- item -->
+                                </div><!-- swiper-slide -->
+                                <div class="swiper-slide">
+                                    <div class="item">
+                                        <div class="img_wrap">
+                                            <img src="img/best-item-16.png" alt="베스트셀러이미지-16" class="default">
+                                            <img src="img/best-item-16-hover.png" alt="베스트셀러이미지-16-hover" class="hover">
+                                        </div><!-- img_wrap -->
+                                        <div class="tab_btn">
+                                            <button class="off active"><img src="img/save-off-icon.png" alt=""></button>
+                                            <button class="on"><img src="img/save-on-icon.png" alt=""></button>
+                                        </div><!-- tab_btn -->
+                                        <div class="text">
+                                            <p>로코 01(R)</p>
+                                            <b>₩330,000</b>
+                                        </div><!-- text -->
+                                    </div><!-- item -->
+                                </div><!-- swiper-slide -->
+                                <div class="swiper-slide">
+                                    <div class="item">
+                                        <div class="img_wrap">
+                                            <img src="img/best-item-17.png" alt="베스트셀러이미지-17" class="default">
+                                            <img src="img/best-item-17-hover.png" alt="베스트셀러이미지-17-hover" class="hover">
+                                        </div><!-- img_wrap -->
+                                        <div class="tab_btn">
+                                            <button class="off active"><img src="img/save-off-icon.png" alt=""></button>
+                                            <button class="on"><img src="img/save-on-icon.png" alt=""></button>
+                                        </div><!-- tab_btn -->
+                                        <div class="text">
+                                            <p>뱀프 01</p>
+                                            <b>₩340,000</b>
+                                        </div><!-- text -->
+                                    </div><!-- item -->
+                                </div><!-- swiper-slide -->
+                                <div class="swiper-slide">
+                                    <div class="item">
+                                        <div class="img_wrap">
+                                            <img src="img/best-item-18.png" alt="베스트셀러이미지-18" class="default">
+                                            <img src="img/best-item-18-hover.png" alt="베스트셀러이미지-18-hover" class="hover">
+                                        </div><!-- img_wrap -->
+                                        <div class="tab_btn">
+                                            <button class="off active"><img src="img/save-off-icon.png" alt=""></button>
+                                            <button class="on"><img src="img/save-on-icon.png" alt=""></button>
+                                        </div><!-- tab_btn -->
+                                        <div class="text">
+                                            <p>주드 01(GR)</p>
+                                            <b>₩279,000</b>
+                                        </div><!-- text -->
+                                    </div><!-- item -->
+                                </div><!-- swiper-slide -->
+                                <div class="swiper-slide">
+                                    <div class="item">
+                                        <div class="img_wrap">
+                                            <img src="img/best-item-19.png" alt="베스트셀러이미지-19" class="default">
+                                            <img src="img/best-item-19-hover.png" alt="베스트셀러이미지-19-hover" class="hover">
+                                        </div><!-- img_wrap -->
+                                        <div class="tab_btn">
+                                            <button class="off active"><img src="img/save-off-icon.png" alt=""></button>
+                                            <button class="on"><img src="img/save-on-icon.png" alt=""></button>
+                                        </div><!-- tab_btn -->
+                                        <div class="text">
+                                            <p>마이 미 KC6</p>
+                                            <b>₩295,000</b>
+                                        </div><!-- text -->
+                                    </div><!-- item -->
+                                </div><!-- swiper-slide -->
+                                <div class="swiper-slide">
+                                    <div class="item">
+                                        <div class="img_wrap">
+                                            <img src="img/best-item-20.png" alt="베스트셀러이미지-20" class="default">
+                                            <img src="img/best-item-20-hover.png" alt="베스트셀러이미지-20-hover" class="hover">
+                                        </div><!-- img_wrap -->
+                                        <div class="tab_btn">
+                                            <button class="off active"><img src="img/save-off-icon.png" alt=""></button>
+                                            <button class="on"><img src="img/save-on-icon.png" alt=""></button>
+                                        </div><!-- tab_btn -->
+                                        <div class="text">
+                                            <p>로로에 01</p>
+                                            <b>₩289,000</b>
+                                        </div><!-- text -->
+                                    </div><!-- item -->
+                                </div><!-- swiper-slide -->
+                            </div><!-- swiper-wrapper -->
+                            <div class="swiper-pagination best-pagination"></div>
+                        </div><!-- swiper best -->
+                    </div><!-- list -->
+                </section><!-- section-03 -->
+            </div><!-- inner -->
+        </div><!-- main -->
+
+
+        <footer class="footer">
+            <div class="inner">
+                <div class="footer_nav">
+                    <ul class="gnb">
+                        <li><a href="#">문의하기</a></li>
+                        <li><a href="#">고객 서비스</a></li>
+                        <li><a href="#">스토어 찾기</a></li>
+                        <li><a href="#">법적 고지</a></li>
+                        <li><a href="#">개인정보 처리방침</a></li>
+                        <li><a href="#">구독하기</a></li>
+                        <li><a href="#">국가: South Korea</a></li>
+                    </ul><!-- gnb -->
+                    <div class="footer_logo">
+                        <b>© 2025 GENTLE MONSTER</b>
+                    </div><!-- footer_logo -->
+                </div><!-- footer_nav -->
+                <div class="sns">
+                    <ul class="gnb">
+                        <li><a href="#"><img src="img/instagram-icon.png" alt="인스타그램아이콘"></a></li>
+                        <li><a href="#"><img src="img/kakaotalk-icon.png" alt="카카오톡아이콘"></a></li>
+                        <li><a href="#"><img src="img/facebook-icon.png" alt="페이스북아이콘"></a></li>
+                        <li><a href="#"><img src="img/twitter-icon.png" alt="트위터아이콘"></a></li>
+                        <li><a href="#"><img src="img/youtube-icon.png" alt="유튜브아이콘"></a></li>
+                        <li><a href="#"><img src="img/tiktok-icon.png" alt="틱톡아이콘"></a></li>
+                        <li><a href="#"><img src="img/wechat-icon.png" alt="위챗아이콘"></a></li>
+                        <li><a href="#"><img src="img/weibo-icon.png" alt="웨이보아이콘"></a></li>
+                    </ul><!-- gnb -->
+                </div><!-- sns -->
+
+                <div class="info_wrap">
+                    <div class="address">
+                        <ul>
+                            <li>(주) 아이아이컴바인드</li>
+                            <li>대표자명: 김한국</li>
+                            <li>사업자번호: 119-86-38589</li>
+                            <li>통신판매신고번호: 제 2014-서울마포-1050호(사업자 정보 확인↗)</li>
+                        </ul>
+                        <ul>
+                            <li>이메일 문의: service.kr@gentlemonster.com</li>
+                            <li>개인정보보호책임자: 정태호</li>
+                            <li>주소: 서울특별시 성동구 뚝섬로 433</li>
+                            <li><a href="tel:1600-2126">대표번호:1600-2126</a></li>
+                        </ul>
+                        <ul>
+                            <li>고객님의 안전한 현금자산 거래를 위해 하나은행과 채무지급보증계약을 체결하여 보장해드리고 있습니다.서비스 가입 여부 확인↗ 고정형 영상 정보 처리기기 운영 및
+                                관리↗</li>
+                        </ul>
+                    </div><!-- address -->
+                </div><!-- info_wrap -->
+            </div><!-- inner -->
+        </footer><!-- footer -->
+    </div><!-- #wrap -->
+</body>
+
+</html>
