@@ -347,12 +347,12 @@ body{
 }
 .main .inner .section-01 .list-01 .item .text p{
     font-family: 'Pretendard';
-    font-size: 22px;
+    font-size: 20px;
     font-weight: 600;
 }
 .main .inner .section-01 .list-01 .item .text b{
     font-family: 'Pretendard';
-    font-size: 25px;
+    font-size: 23px;
     font-weight: bold;
 }
 
@@ -402,16 +402,16 @@ body{
     right: 25px;
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    gap: 10px;
 }
 .main .inner .section-01 .list-02 .item .text p{
     font-family: 'Pretendard';
-    font-size: 22px;
+    font-size: 20px;
     font-weight: 600;
 }
 .main .inner .section-01 .list-02 .item .text b{
     font-family: 'Pretendard';
-    font-size: 25px;
+    font-size: 23px;
     font-weight: bold;
 }
 .swiper.newproduct {
@@ -705,12 +705,12 @@ body{
 }
 .section-03 .list .item .text p{
     font-family: 'Pretendard';
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 500;
 }
 .section-03 .list .item .text b{
     font-family: 'Pretendard';
-    font-size: 20px;
+    font-size: 22px;
     font-weight: bold;
 }
 .best-pagination{
