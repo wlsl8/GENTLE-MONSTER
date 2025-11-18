@@ -375,6 +375,7 @@ body{
 .section-01 .list-02 .item .img_wrap img{
     width: 100%;
     object-fit: cover;
+    transition: all 0.3s ease;
 }
 .section-01 .list-02 .item .img_wrap img.hover{
     display: none;
@@ -629,7 +630,7 @@ body{
     font-weight: 500;
     line-height: 1.8;
 }
-.section-02 .text button{
+.section-02 .text span{
     font-size: 20px;
     font-weight: 500;
     text-decoration: underline;
