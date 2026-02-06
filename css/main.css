@@ -484,13 +484,13 @@ body{
 }
 .section-02 .collection .collection_main{
     width: 600px;
-    height: 650px;
+    height: 700px;
 }
 .section-02 .collection .collection_main img{
     width: 100%;
     height: 100%;
     object-fit: cover;
-    margin-bottom: 90px;
+    margin-bottom: 40px;
 }
 .section-02 .collection .collection_main h2{
     text-align: center;
