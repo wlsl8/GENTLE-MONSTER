@@ -19,6 +19,14 @@
     font-style: normal;
     font-display: swap;
 }
+@font-face {
+    font-family: 'Abhaya Libre';
+    src: url('../font/Abhaya\ Libre/AbhayaLibre-SemiBold.woff2') format('woff2'),
+        url('../font/Abhaya\ Libre/AbhayaLibre-SemiBold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
 
 @font-face {
     font-family: 'Pretendard';
@@ -65,39 +73,42 @@ body{
     background-color: #F3F4F6;
     font-family: 'Pretendard';
     color: #333333;
+    overflow-x: hidden;
 }
 
-.header .inner,
-.main .inner,
-.footer .inner{
-    max-width: 1920px;
-    width: 1600px;
-    margin: 0 auto;
-}
 
 .header{
+    max-width: 1600px;
+    min-width: 1440px;
     margin: 0 auto;
-    height: 90px;
+    height: 70px;
     display: flex;
     justify-content: center;
     align-items: center;
 } 
 .header .inner{
+    max-width: 1600px;
+    min-width: 1440px;
+    padding: 0 80px;
     width: 100%;
-    height: 90px;
+    height: 70px;
     position: fixed;
     z-index: 999;
     background-color: #F3F4F6;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
 }
 .header .inner .logo{
     order: 2;
-    margin-right: 416px;
+    position: absolute;  
+    left: 50%;     
+    top: 50%;          
+    transform: translate(-50%, -50%);
+    z-index: 10; 
 }
 .header .inner .logo img{
-    width: 428px;
+    width: 280px;
     object-fit: cover;
 }
 
@@ -105,24 +116,23 @@ body{
     display: flex;
     gap: 35px;
     font-family: 'Abhaya Libre';
-    font-weight: bold;
-    font-size: 22px;
-    margin-right: 109px;
+    font-weight: 600;
+    font-size: 21px;
 }
 .header .inner .nav .gnb > li{
     position: relative;
 }
 .header .inner .nav .gnb > li .depth-01{
     display: block;
-    line-height: 90px;
+    line-height: 70px;
 }
 .header .inner .nav .gnb > li .depth-02{
     min-width: 200px;
     position: absolute;
-    top: 90px;
+    top: 70px;
     left: 50%;
     transform: translateX(-50%);
-    padding-top: 30px;
+    padding-top: 20px;
     z-index: 9;
     text-align: center;
     display: none;
@@ -146,7 +156,7 @@ body{
     height: 300px;
     background-color: rgba(255, 255, 255, 0.9);
     position: absolute;
-    top: 90px;
+    top: 70px;
     left: 0;
     display: none;
 }
@@ -160,27 +170,30 @@ body{
 }
 .header .inner .util ul{
     display: flex;
-    gap: 35px;
+    gap: 28px;
     justify-content: center;
     align-items: center;
 }
 .header .inner .util img{
-    width: 40px;
+    width: 30px;
     object-fit: cover;
 }
 
 
 .main .inner{
+    max-width: 1600px;
+    min-width: 1440px;
+    margin: 0 auto;
     width: 100%;
 }
 .main .inner .main_visual{
     width: 100%;
-    height: 750px;
+    height: 650px;
     margin-bottom: 300px;
 }
 .main .inner .main_visual .swiper-slide{
     width: 100%;
-    height: 750px;
+    height: 650px;
     position: relative;
 }
 .main .inner .main_visual .swiper-slide img{
@@ -196,34 +209,25 @@ body{
   pointer-events: none;
   z-index: 1;
 }
-/* .main .inner .main_visual .swiper-slide:nth-child(1)::after,
-.main .inner .main_visual .swiper-slide:nth-child(3)::after,
-.main .inner .main_visual .swiper-slide:nth-child(4)::after {
-  content: "";
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: linear-gradient(to top, rgba(0,0,0,0.6), rgba(0,0,0,0));
-  pointer-events: none;
-  z-index: 1;
-} */
 .main .inner .main_visual .swiper-slide .text{
     position: absolute;
     z-index: 10;
-    bottom: 205px;
+    bottom: 140px;
     left: 50%;
     transform: translate(-50%, -50%);
 }
 .main .inner .main_visual .swiper-slide .text strong{
-    font-size: 60px;
+    font-size: 65px;
     font-family: 'Abril Fatface';
     font-weight: 1000;
     color: #fff;
     text-shadow: 0px 8px 4px rgba(0, 0, 0, 0.3);
     -webkit-text-stroke: 1px #BCBCBC;
+    white-space: nowrap;
 }
 .main .inner .main_visual .swiper-slide .button{
     position: absolute;
-    bottom: 120px;
+    bottom: 50px;
     left: 50%;
     transform: translate(-50%, -50%);
     display: flex;
@@ -236,26 +240,28 @@ body{
     font-size: 20px;
     color: #575757;
     font-weight: bold;
-    width: 150px;
-    height: 54.55px;
+    width: 140px;
+    height: 50px;
     background: rgba(255, 255, 255, 0.9);
     border-radius: 30px;
     text-align: center;
-    line-height: 54.55px;
+    line-height: 50px;
+    padding: 0;
 }
 .main .inner .main_visual .swiper-slide .button .right{
     font-family: 'Pretendard';
     font-size: 20px;
     color: #fff;
     font-weight: bold;
-    width: 150px;
-    height: 54.55px;
+    width: 140px;
+    height: 50px;
     border: 2px solid rgba(255, 255, 255, 0.9);
     border-radius: 30px;
     text-align: center;
-    line-height: 50.55px;
+    line-height: 45px;
     background: transparent;
     opacity: 1;
+    padding: 0;
 }
 .main-pagination .swiper-pagination-bullet {
   width: 120px;
@@ -274,49 +280,63 @@ body{
 
 
 .main .inner .section-01{
-    width: 1600px;
-    margin: 0 auto;
-    margin-bottom: 300px;
+    max-width: 1600px;
+    min-width: 1440px;
+    margin: 0 auto 300px;
+    width: 100%;
 }
 .main .inner .section-01 .new_main{
+    width: 100%;
+    padding: 0 100px;
+    height: 320px;
+    margin: 0 auto 30px;
     position: relative;
-    margin-bottom: 20px;
 }
 .main .inner .section-01 .new_main img{
     width: 100%;
+    height: 100%;
     object-fit: cover;
 }
 .main .inner .section-01 .new_main .title{
     position: absolute;
-    bottom: 84px;
-    left: 70px;
+    bottom: 45px;
+    left: 50px;
+    padding-left: 100px;
     display: flex;
     align-items: flex-end;
     gap: 20px;
 }
 .main .inner .section-01 .new_main .title h2{
     font-family: 'Abril Fatface';
-    font-size: 80px;
+    font-size: 60px;
     color: #fff;
     text-shadow: 10px 13px 5px rgba(0, 0, 0, 0.3);
 }
 .main .inner .section-01 .new_main .title p{
     font-family: 'Pretendard';
-    font-size: 20px;
+    font-size: 16px;
     font-weight: 400;
-    color: #fff;
+    color: #f5f5f5;
     text-decoration: underline;
 }
+
+.main .inner .section-01 .swiper-slide{
+    max-width: 1600px;
+    min-width: 1440px;
+    margin: 0 auto;
+    width: 100%;
+}
 .main .inner .section-01 .list-01{
+    width: 100%;
+    padding: 0 100px;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px 20px;
-    max-width: calc(790px * 2 + 40px); 
+    justify-content: space-between;
+    row-gap: 15px;
     margin: 0 auto;
 }
 .main .inner .section-01 .list-01 .item {
-    width: 790px;
+    width: 650px;
     box-sizing: border-box;
     position: relative;
     border: 2px solid #E5E5E5;
@@ -330,14 +350,14 @@ body{
 .main .inner .section-01 .list-01 .item .tab_btn button{
     position: absolute;
     top: 20px;
-    right: 20px;
+    right: 10px;
     display: none;
 }
 .main .inner .section-01 .list-01 .item .tab_btn .active{
     display: block;
 }
 .main .inner .section-01 .list-01 .item .tab_btn button img{
-    width: 45px;
+    width: 38px;
 }
 .main .inner .section-01 .list-01 .item .text{
     position: absolute;
@@ -359,46 +379,57 @@ body{
     font-weight: bold;
 }
 
-
 .main .inner .section-01 .list-02{
+    width: 100%;
+    padding: 0 100px;
     display: flex;
-    gap: 20px;
-    margin-top: 20px;
+    justify-content: space-between;
+    margin: 15px auto 0;
 }
 .section-01 .list-02 .item{
-    width: 520px;
-    height: 400px;
+    width: 425px;
+    height: 328px;
     position: relative;
     border: 2px solid #E5E5E5;
     box-sizing: border-box;
+    background-color: #F3F4F6;
+}
+.section-01 .list-02 .item .img_wrap{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
 }
 .section-01 .list-02 .item .img_wrap img{
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
+    height: 100%;
     object-fit: cover;
     transition: all 0.3s ease;
 }
 .section-01 .list-02 .item .img_wrap img.hover{
-    display: none;
-    z-index: 2;
+    opacity: 0;
 }
 .section-01 .list-02 .item:hover .img_wrap img.hover{
-    display: block;
+    opacity: 1;
 }
 .section-01 .list-02 .item:hover .img_wrap img.default{
-    display: none;
+    opacity: 0;
 }
 
 .main .inner .section-01 .list-02 .item .tab_btn button{
     position: absolute;
     top: 20px;
-    right: 20px;
+    right: 10px;
     display: none;
 }
 .main .inner .section-01 .list-02 .item .tab_btn .active{
     display: block;
 }
 .main .inner .section-01 .list-02 .item button img{
-    width: 45px;
+    width: 38px;
 }
 .main .inner .section-01 .list-02 .item .text{
     position: absolute;
@@ -439,124 +470,55 @@ body{
 
 
 
+
 .section-02{
-    margin-bottom: 325px;
+    max-width: 1600px;
+    min-width: 1440px;
+    margin: 0 auto 325px;
+    width: 100%;
+    padding: 0 100px;
 }
 .section-02 .collection{
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: flex-start;
-    gap: 20px;
     margin: 0 auto;
 }
-.section-02 .collection .list-01{
-    display: flex;
-    flex-direction: column;
-    row-gap: 20px;
-}
-.section-02 .collection .list-01 .item{
-    width: 410px;
-    position: relative;
-    border: 2px solid #E5E5E5;
-}
-.section-02 .collection .list-01 .item .img_wrap{
-    position: relative;
-}
-.section-02 .collection .list-01 .item .img_wrap::after{
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 40%;
-    background: linear-gradient(to top, rgba(255, 255, 255, 0.8), transparent);
-    opacity: 0;
-    transition: opacity 0.3s;
-    pointer-events: none;
-    z-index: 3;
-}
-.section-02 .collection .list-01 .item img{
-    width: 100%;
-    object-fit: cover;
-}
-.section-02 .collection .list-01 .item .hover{
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: none;
-}
-.section-02 .collection .list-01 .item:hover .hover{
-    display: block;
-    z-index: 2;
-}
-.section-02 .collection .list-01 .item:hover .img_wrap::after{
-    opacity: 1;
-}
-.section-02 .collection .list-01 .item .tab_btn button{
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    z-index: 10;
-    display: none;
-}
-.section-02 .collection .list-01 .item .tab_btn button.active{
-    display: block;
-    z-index: 10;
-}
-.section-02 .collection .list-01 .item button img{
-    width: 45px;
-}
-.section-02 .collection .list-01 .item .text{
-    position: absolute;
-    bottom: 20px;
-    right: 40px;
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    z-index: 3;
-    text-align: left;
-}
-.section-02 .collection .list-01 .item .text p{
-    font-family: 'Pretendard';
-    font-size: 18px;
-    font-weight: 600;
-}
-.section-02 .collection .list-01 .item .text b{
-    font-family: 'Pretendard';
-    font-size: 20px;
-    font-weight: 600;
-}
-
 .section-02 .collection .collection_main{
-    width: 740px;
+    width: 600px;
 }
 .section-02 .collection .collection_main img{
     width: 100%;
     object-fit: cover;
-    margin-bottom: 60px;
+    margin-bottom: 90px;
 }
 .section-02 .collection .collection_main h2{
     text-align: center;
-    font-size: 75px;
+    font-size: 70px;
     font-family: 'Abril Fatface';
 }
+.section-02 .collection .list-01,
 .section-02 .collection .list-02{
     display: flex;
     flex-direction: column;
     row-gap: 20px;
 }
+.section-02 .collection .list-01 .item,
 .section-02 .collection .list-02 .item{
-    width: 410px;
+    width: 330px;
+    height: 401px;
     position: relative;
     border: 2px solid #E5E5E5;
 }
+.section-02 .collection .list-01 .item .img_wrap,
 .section-02 .collection .list-02 .item .img_wrap{
     position: relative;
 }
+.section-02 .collection .list-01 .item .img_wrap::after,
 .section-02 .collection .list-02 .item .img_wrap::after{
     content: "";
     position: absolute;
-    bottom: 0;
+    bottom: 2px;
     left: 0;
     width: 100%;
     height: 40%;
@@ -566,61 +528,73 @@ body{
     pointer-events: none;
     z-index: 3;
 }
+.section-02 .collection .list-01 .item img,
 .section-02 .collection .list-02 .item img{
     width: 100%;
     object-fit: cover;
 }
+.section-02 .collection .list-01 .item .hover,
 .section-02 .collection .list-02 .item .hover{
     position: absolute;
     top: 0;
     left: 0;
     display: none;
 }
+.section-02 .collection .list-01 .item:hover .hover,
 .section-02 .collection .list-02 .item:hover .hover{
     display: block;
     z-index: 2;
 }
+.section-02 .collection .list-01 .item:hover .img_wrap::after,
 .section-02 .collection .list-02 .item:hover .img_wrap::after{
     opacity: 1;
 }
+
+.section-02 .collection .list-01 .item .tab_btn button,
 .section-02 .collection .list-02 .item .tab_btn button{
     position: absolute;
     top: 20px;
-    right: 20px;
+    right: 10px;
     z-index: 10;
     display: none;
 }
+.section-02 .collection .list-01 .item .tab_btn button.active,
 .section-02 .collection .list-02 .item .tab_btn button.active{
     display: block;
     z-index: 10;
 }
+.section-02 .collection .list-01 .item button img,
 .section-02 .collection .list-02 .item button img{
-    width: 45px;
+    width: 40px;
 }
+.section-02 .collection .list-01 .item .text,
 .section-02 .collection .list-02 .item .text{
     position: absolute;
-    bottom: 20px;
-    right: 40px;
+    bottom: 25px;
+    right: 20px;
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    gap: 2px;
     z-index: 3;
     text-align: left;
 }
+.section-02 .collection .list-01 .item .text p,
 .section-02 .collection .list-02 .item .text p{
+    font-family: 'Pretendard';
+    font-size: 17px;
+    font-weight: 500;
+}
+.section-02 .collection .list-01 .item .text b,
+.section-02 .collection .list-02 .item .text b{
     font-family: 'Pretendard';
     font-size: 18px;
     font-weight: 600;
 }
-.section-02 .collection .list-02 .item .text b{
-    font-family: 'Pretendard';
-    font-size: 20px;
-    font-weight: 600;
-}
+
 .section-02 .text{
     font-family: 'Pretendard';
     text-align: center;
-    margin-top: 31px;
+    margin-top: 20px;
     display: flex;
     flex-direction: column;
     row-gap: 25px;
@@ -631,17 +605,24 @@ body{
     line-height: 1.8;
 }
 .section-02 .text span{
-    font-size: 20px;
+    font-size: 17px;
     font-weight: 500;
     text-decoration: underline;
 }
 
 
+
+
+
+
 .section-03{
-    width: 1920px;
-    height: 800px;
+    max-width: 1600px;
+    min-width: 1440px;
+    margin: 0 auto 200px;
+    width: 100%;
+    height: 600px;
     background-color: #454545;
-    margin-bottom: 200px;
+
 }
 .section-03 .title{
     padding: 83px 0 25px 100px;
@@ -649,25 +630,25 @@ body{
     align-items: center;
 }
 .section-03 .title h2{
-    font-size: 50px;
+    font-size: 35px;
     font-family: 'Abril Fatface';
     color: #fff;
 }
 .section-03 .title img{
-    width: 60px;
+    width: 45px;
 }
 
 .section-03 .list{
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-left: 100px;
-    gap: 20px;
+    padding-left: 100px;
 }
 .section-03 .list .item{
-    width: 385px;
-    height: 530px;
+    width: 250px;
+    height: 344px;
     position: relative;
+    background-color: antiquewhite;
 }
 .section-03 .list .item img{
     width: 100%;
@@ -686,8 +667,8 @@ body{
 .section-03 .list .item .tab_btn button{
     position: absolute;
     top: 20px;
-    right: 20px;
-    width: 60px;
+    right: 10px;
+    width: 48px;
     display: none;
 }
 .section-03 .list .item .tab_btn button.active{
@@ -699,22 +680,23 @@ body{
 }
 .section-03 .list .item .text{
     position: absolute;
-    bottom: 25px;
+    bottom: 5px;
     left: 50%;
     text-align: center;
     transform: translate(-50%, -50%);
     display: flex;
     flex-direction: column;
     gap: 14px;
+    white-space: nowrap;
 }
 .section-03 .list .item .text p{
     font-family: 'Pretendard';
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 500;
 }
 .section-03 .list .item .text b{
     font-family: 'Pretendard';
-    font-size: 22px;
+    font-size: 20px;
     font-weight: bold;
 }
 .best-pagination{
@@ -724,7 +706,10 @@ body{
 
 
 .footer{
-    width: 1920px;
+    max-width: 1600px;
+    min-width: 1440px;
+    width: 100%;
+    padding: 0 80px;
     margin: 0 auto;
     background-color: #EFEFEF;
     font-family: 'Pretendard';
@@ -736,21 +721,22 @@ body{
     justify-content: space-between;
 }
 .footer .inner .footer_nav .gnb{
-    padding-bottom: 20px;
+    padding-bottom: 15px;
     display: flex;
     align-items: center;
     gap: 30px;
 }
 .footer .inner .footer_nav .gnb li{
-    font-size: 20px;
-    font-weight: 600;
+    font-size: 18px;
+    font-weight: 500;
 }
 .footer .inner .footer_nav .footer_logo b{
-    font-size: 22px;
+    font-size: 16px;
     font-weight: 600;
 }
 .footer .inner .sns{
-    margin-bottom: 20px;
+    margin-bottom: 10px;
+    margin-left: -20px;
 }
 .footer .inner .sns .gnb{
     display: flex;
@@ -758,7 +744,7 @@ body{
     gap: -10px;
 }
 .footer .inner .sns .gnb li{
-    width: 100px;
+    width: 75px;
 }
 .footer .inner .sns .gnb li img{
     width: 100%;
@@ -766,15 +752,15 @@ body{
 }
 .footer .inner .info_wrap .address ul{
     color: #8D8D8D;
-    font-size: 20px;
+    font-size: 16px;
     font-weight: 500;
     display: flex;
     gap: 20px;
     margin-top: 15px;
 }
 .footer .inner .info_wrap .address ul:last-child{
-    margin-top: 80px;
-    padding-bottom: 90px;
+    margin-top: 50px;
+    padding-bottom: 50px;
 }
 .footer .inner .info_wrap .address ul li{
     position: relative;

@@ -33,11 +33,9 @@
                 const btnOff = tab.querySelector('.off');
                 const btnOn = tab.querySelector('.on');
 
-                // 기본 상태: off 버튼이 보이게
                 btnOff.classList.add('active');
                 btnOn.classList.remove('active');
 
-                // 클릭 이벤트: off 클릭하면 on으로, on 클릭하면 off로
                 btnOff.addEventListener('click', () => {
                     btnOff.classList.remove('active');
                     btnOn.classList.add('active');
@@ -76,7 +74,7 @@
             });
 
             var swiper = new Swiper(".swiper.best", {
-                slidesPerView: 4.5,
+                slidesPerView: 5.5,
                 spaceBetween: 30,
                 pagination: {
                     el: ".best-pagination",
